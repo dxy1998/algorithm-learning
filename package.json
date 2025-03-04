@@ -1,0 +1,30 @@
+{
+  "name": "algorithm-learning",
+  "version": "1.0.0",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "commit": "git add . && git cz",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3",
+    "vitepress": "^1.6.3"
+  },
+  "lint-staged": {
+    "docs/**/*.{md,mdx,js,ts}": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "packageManager": "pnpm@10.5.2"
+}
