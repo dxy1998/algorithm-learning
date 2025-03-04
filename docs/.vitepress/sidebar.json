@@ -1,0 +1,12 @@
+[
+  {
+    "text": "简单算法",
+    "collapsed": false,
+    "items": [
+      { "text": "插入排序", "link": "/simple/insertionSort" },
+      { "text": "冒泡排序", "link": "/simple/bubble" },
+      { "text": "快速排序", "link": "/simple/quickSort" },
+      { "text": "二分查找", "link": "/simple/binarySearch" }
+    ]
+  }
+]

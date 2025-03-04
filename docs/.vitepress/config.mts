@@ -1,29 +1,24 @@
 import { defineConfig } from 'vitepress'
-
+import { fileURLToPath } from 'node:url'
+import sidebar from './sidebar.json'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Learning Algorithm',
-  base: '/algorithm-learning/',
+  base: process.env.NODE_ENV === 'production' ? '/algorithm-learning/' : '/',
   description: '学习算法',
+  cleanUrls: true,
+  lang: 'zh-Hans',
+  srcDir: fileURLToPath(new URL('../../src', import.meta.url)),
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ],
-      },
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-    ],
+    sidebar,
+  },
+  rewrites: {
+    '/': '/simple/insertionSort',
+  },
+  lastUpdated: true,
+  vite: {
+    server: {
+      open: true,
+    },
   },
 })

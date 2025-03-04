@@ -17,7 +17,10 @@
     "vitepress": "^1.6.3"
   },
   "lint-staged": {
-    "docs/**/*.{md,mdx,js,ts}": [
+    "docs/**/*.{md,ts}": [
+      "prettier --write"
+    ],
+    "src/**/*.{md,ts}": [
       "prettier --write"
     ]
   },
